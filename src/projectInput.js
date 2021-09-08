@@ -2,6 +2,7 @@ import {projectsRender} from './projectOnScreen'
 
 
 const projects =[];
+const deleted = [];
 let projectInput = () => {
   
     const projectForm = document.getElementById('projectForm');
@@ -16,7 +17,7 @@ let projectInput = () => {
             date: projectInputDate.value,
             description: projectInputDescription.value,
             tasks: [],
-            id: Date()
+            id: Math.random()
         }
         projects.push(project);
         projectForm.reset()
@@ -31,3 +32,4 @@ let projectInput = () => {
 
 export {projectInput}
 export {projects}
+export {deleted}
