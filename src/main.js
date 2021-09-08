@@ -106,17 +106,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _projectInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectInput */ \"./src/projectInput.js\");\n\n\n\n\n(0,_projectInput__WEBPACK_IMPORTED_MODULE_1__.renderProjectInput) ()\n\n//# sourceURL=webpack://todos/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/projectInput.js":
-/*!*****************************!*\
-  !*** ./src/projectInput.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderProjectInput\": () => (/* binding */ renderProjectInput)\n/* harmony export */ });\nlet projects =[];\nlet renderProjectInput = () => {\n  //  const content = document.getElementById('content');\n    const projectForm = document.getElementById('projectForm');\n    const projectTitleInput = document.getElementById('projectInputTitle');\n    const projectInputDate = document.getElementById('projectInputDate');\n    const projectInputDescription = document.getElementById('projectInputDescription');\n\n    projectForm.addEventListener('submit', (e) => {\n        e.preventDefault()\n        let project = {\n            title: projectTitleInput.value,\n            date: projectInputDate.value,\n            description: projectInputDescription.value,\n            tasks: [],\n            id: Date()\n        }\n        projects.push(project);\n        projectForm.reset()\n        console.log(projects)\n    })\n\n}\n\n\n\n\n\n//# sourceURL=webpack://todos/./src/projectInput.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://todos/./src/index.js?");
 
 /***/ })
 
