@@ -1,5 +1,14 @@
 import './style.css';
 
-import {renderProjectInput} from './projectInput';
+import {projectInput} from './projectInput';
+import {projects} from './projectInput';
 
-renderProjectInput ()
+
+window['projects'] = projects;
+
+projectInput ();
+
+
+
+
+

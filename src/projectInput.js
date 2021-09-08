@@ -1,6 +1,9 @@
-let projects =[];
-let renderProjectInput = () => {
-  //  const content = document.getElementById('content');
+import {projectsRender} from './projectOnScreen'
+
+
+const projects =[];
+let projectInput = () => {
+  
     const projectForm = document.getElementById('projectForm');
     const projectTitleInput = document.getElementById('projectInputTitle');
     const projectInputDate = document.getElementById('projectInputDate');
@@ -18,10 +21,13 @@ let renderProjectInput = () => {
         projects.push(project);
         projectForm.reset()
         console.log(projects)
+
+        projectsRender();
     })
 
 }
 
 
 
-export {renderProjectInput}
+export {projectInput}
+export {projects}
