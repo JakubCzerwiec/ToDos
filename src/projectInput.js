@@ -2,7 +2,7 @@ import {projectsRender} from './projectOnScreen'
 
 
 const projects =[];
-const deleted = [];
+// const deleted = ['q'];
 let projectInput = () => {
   
     const projectForm = document.getElementById('projectForm');
@@ -32,4 +32,4 @@ let projectInput = () => {
 
 export {projectInput}
 export {projects}
-export {deleted}
+// export {deleted}

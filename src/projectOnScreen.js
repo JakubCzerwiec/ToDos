@@ -1,5 +1,5 @@
 import {projects} from './projectInput';
-import {deleted} from './projectInput'
+// import {deleted} from './projectInput'
 // import {deleteProjectListener} from './listeners';
 
 
@@ -7,7 +7,7 @@ import {deleted} from './projectInput'
 let projectsRender = () => {
    
     const projectsDiv = document.querySelector('.projectsDiv');
-    projectsDiv.innerHTML = '';
+    
 
     
     
@@ -15,20 +15,26 @@ let projectsRender = () => {
         let deleteButtons = document.querySelectorAll('.projectDeleteBtn');
         deleteButtons.forEach((element) => {
             element.addEventListener('click', () => {
-                 deleted = projects.filter((pro) => {
+                let deleted = projects.filter((pro) => {
                     return pro.id != element.id;
                 })
-              //  projects = [];
-                projects = deleted;
+                
+                projects.splice(0, projects.length);
+                
+                    deleted.forEach(el => {
+                        projects.push(el)
+                    })
+              
                 console.log(projects);
-                render();
+                render(); 
                 })
         });
     }
     
     
     let render = () => {
-        // const content = document.getElementById('content');
+        projectsDiv.innerHTML = '';
+
                 projects.forEach((project) => {
                     
                     let projectDeleteBtn = document.createElement('div');
