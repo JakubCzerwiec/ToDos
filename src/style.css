@@ -1,3 +1,12 @@
 body {
     background-color: grey;
 }
+
+.hidden {
+    display: none;
+}
+
+.singleProject {
+    margin: 1em;;
+    border: 1px solid black;
+}

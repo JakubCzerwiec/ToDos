@@ -1,8 +1,28 @@
 import {projectsRender} from './projectOnScreen'
 
 
-const projects =[];
-// const deleted = ['q'];
+const projects =[
+    {
+        title: 'One',
+        date: '12.09.2021',
+        description: 'alle',
+        tasks: [
+            {
+                title: 'one',
+                id: 0.09
+                }, 
+            {
+                title: 'two',
+                id: 0.06
+            }, 
+            {
+                title: 'three',
+                id: 0.07
+            }
+        ],
+        id: 0.234
+    }
+];
 let projectInput = () => {
   
     const projectForm = document.getElementById('projectForm');
@@ -32,4 +52,3 @@ let projectInput = () => {
 
 export {projectInput}
 export {projects}
-// export {deleted}

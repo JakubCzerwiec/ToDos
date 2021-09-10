@@ -8,7 +8,7 @@
 <script defer src="main.js"></script></head>
 <body>
     <div id="content">
-      <form id="projectForm" class="form_project hidden">
+      <form id="projectForm" class="form_project">
           <label for="projectInputTitle">Title for new Project</label>
           <input id="projectInputTitle" type="text" placeholder="Insert title">
 
@@ -22,7 +22,24 @@
 
 
       </form>
+
       <div class="projectsDiv"></div>
+
+      <form id="tasksForm" class="form_task hidden">
+        <label for="taskInputTitle">Title for new Project</label>
+        <input id="taskInputTitle" type="text" placeholder="Insert title">
+
+        <label for="taskInputDate">Date</label>
+        <input id="taskInputDate" type="text" placeholder="Insert date">
+
+
+
+        <button class="taskSubmitBtn">Create</button>
+
+
+    </form>
+
+
     </div>
     <script src="1ec3a776f3fc63325cb5.js"></script>
 </body>
