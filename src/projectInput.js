@@ -42,8 +42,10 @@ let projectInput = () => {
             id: Math.random()
         }
         projects.push(project);
-        projectForm.reset()
-        console.log(projects)
+        projectForm.reset();
+        console.log(projects);
+
+        projectForm.classList.toggle('hidden');
 
         projectsRender();
     })

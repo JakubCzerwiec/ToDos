@@ -1,5 +1,6 @@
 import {projects} from './projectInput';
 import {tasktInput} from './taskInput';
+import {editProject} from './editProject';
 
 
 
@@ -64,6 +65,11 @@ let projectsRender = () => {
                         projectDeleteBtn.innerText = 'X';
                         projectDeleteBtn.className = 'projectDeleteBtn';
                         projectDeleteBtn.id = project.id;
+
+                        let projectEditBtn = document.createElement('div');
+                        projectEditBtn.innerText = 'Edit';
+                        projectEditBtn.className = 'projectEditBtn';
+                        projectEditBtn.id = project.id;
     
                         let projectTitle = document.createElement('div');
                         projectTitle.className = 'projectTitle';
@@ -101,7 +107,7 @@ let projectsRender = () => {
 
 
     
-                    singleProject.append(projectDeleteBtn, projectTitle, projectDate, projectDescription, projectTask, addTaskBtn);
+                    singleProject.append(projectDeleteBtn, projectEditBtn, projectTitle, projectDate, projectDescription, projectTask, addTaskBtn);
                     projectsDiv.append(singleProject);
 
                     
@@ -109,6 +115,7 @@ let projectsRender = () => {
                 
             deleteProjectListener();
             deleteTaskListener();
+            editProject();
             
 
     }
