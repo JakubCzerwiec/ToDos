@@ -7,6 +7,7 @@ let projectsRender = () => {
    
     const projectsDiv = document.querySelector('.projectsDiv');
     
+    // Listener to delete project
     let deleteProjectListener = () => {
         let deleteButtons = document.querySelectorAll('.projectDeleteBtn');
         deleteButtons.forEach((element) => {
@@ -22,27 +23,35 @@ let projectsRender = () => {
                     })
               
                 console.log(projects);
-                render(); 
+                render();
+                tasktInput(); 
                 })
         });
     }
 
-
-   /* let deleteTaskListener = () => {
-        let deleteButtonsTasks = document.querySelectorAll('.taskDeleteBtn');
+    // Listener to delete task
+   let deleteTaskListener = () => {
+        let taskDeleteBtn = document.querySelectorAll('.taskDeleteBtn');
         taskDeleteBtn.forEach(element => {
             element.addEventListener('click', () => {
-                let deletedTasks = projects.forEach(project => {
-                    project.tasks.filter((taks) => {
-                        return task.id != element.id
+                projects.forEach(project => {
+                   let deleted = project.tasks.filter((task) => {
+                        return task.id != element.id;
                     })
-                }) 
-                
+                    project.tasks.splice(0, project.tasks.length);
+                    deleted.forEach(el => {
+                        project.tasks.push(el)
+                    })
+                })
+                console.log(projects);
+                render(); 
+                tasktInput(); 
             })
         })
-    } */
+
+    } 
     
-    
+    // Render everything on screen
     let render = () => {
         projectsDiv.innerHTML = '';
 
@@ -93,17 +102,18 @@ let projectsRender = () => {
 
     
                     singleProject.append(projectDeleteBtn, projectTitle, projectDate, projectDescription, projectTask, addTaskBtn);
-                    projectsDiv.append(singleProject)
+                    projectsDiv.append(singleProject);
 
                     
                 })
                 
             deleteProjectListener();
+            deleteTaskListener();
             
 
     }
-    render()
-    tasktInput()
+    render();
+    tasktInput();
     
 }
 

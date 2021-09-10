@@ -1,6 +1,6 @@
 import {projectsRender} from './projectOnScreen'
 
-
+// Examples
 const projects =[
     {
         title: 'One',
@@ -23,6 +23,8 @@ const projects =[
         id: 0.234
     }
 ];
+
+// Injecting data into projects array
 let projectInput = () => {
   
     const projectForm = document.getElementById('projectForm');
