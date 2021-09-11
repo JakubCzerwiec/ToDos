@@ -1,6 +1,7 @@
 import {projects} from './projectInput';
 import {tasktInput} from './taskInput';
 import {editProject} from './editProject';
+import {taskDoneListener} from './listeners';
 
 
 
@@ -25,10 +26,10 @@ let projectsRender = () => {
               
                 console.log(projects);
                 render();
-                tasktInput(); 
                 })
         });
     }
+
 
     // Listener to delete task
    let deleteTaskListener = () => {
@@ -46,11 +47,11 @@ let projectsRender = () => {
                 })
                 console.log(projects);
                 render(); 
-                tasktInput(); 
             })
         })
 
     } 
+
     
     // Render everything on screen
     let render = () => {
@@ -78,6 +79,10 @@ let projectsRender = () => {
                         let projectDate = document.createElement('div');
                         projectDate.className = 'projectDate';
                         projectDate.innerText = project.date;
+
+                        let projectPriority = document.createElement('div');
+                        projectPriority.className = 'projectPriority';
+                        projectPriority.innerHTML = project.priority;
         
                         let projectDescription = document.createElement('div');
                         projectDescription.className = 'projectDescription'
@@ -100,14 +105,19 @@ let projectsRender = () => {
                             taskDeleteBtn.innerText = 'XX';
                             taskDeleteBtn.className = 'taskDeleteBtn';
                             taskDeleteBtn.id = task.id;
-                            taskDiv.append(taskDeleteBtn);
+
+                            let taskDoneBtn = document.createElement('div');
+                            taskDoneBtn.innerHTML = `<input type='checkbox'>`
+                            taskDoneBtn.className = 'taskDoneBtn';
+                            taskDoneBtn.id = task.id;
+                            taskDiv.append(taskDoneBtn, taskDeleteBtn);
 
                             projectTask.append(taskDiv);
                         })
 
 
     
-                    singleProject.append(projectDeleteBtn, projectEditBtn, projectTitle, projectDate, projectDescription, projectTask, addTaskBtn);
+                    singleProject.append(projectDeleteBtn, projectEditBtn, projectTitle, projectDate, projectPriority, projectDescription, projectTask, addTaskBtn);
                     projectsDiv.append(singleProject);
 
                     
@@ -116,6 +126,8 @@ let projectsRender = () => {
             deleteProjectListener();
             deleteTaskListener();
             editProject();
+            taskDoneListener();
+
             
 
     }

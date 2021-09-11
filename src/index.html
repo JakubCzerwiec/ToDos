@@ -16,7 +16,15 @@
           <label for="projectInputDate">Date</label>
           <input id="projectInputDate" type="text" placeholder="Insert date">
 
-          <label for="projectInputDescription">Title for new Project</label>
+          <label for="projectPriority">Priority</label>
+          <select name="projectPriority" id="projectPriority">
+              <option disabled selected value>Choose priority</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+          </select>
+
+          <label for="projectInputDescription">Brief description of the project</label>
           <input id="projectInputDescription" type="text-area" placeholder="Type some description">
 
           <button class="projectSubmitBtn">Create</button>

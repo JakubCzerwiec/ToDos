@@ -30,6 +30,7 @@ let projectInput = () => {
     const projectForm = document.getElementById('projectForm');
     const projectTitleInput = document.getElementById('projectInputTitle');
     const projectInputDate = document.getElementById('projectInputDate');
+    const projectPriority = document.getElementById('projectPriority')
     const projectInputDescription = document.getElementById('projectInputDescription');
 
     projectForm.addEventListener('submit', (e) => {
@@ -37,6 +38,7 @@ let projectInput = () => {
         let project = {
             title: projectTitleInput.value,
             date: projectInputDate.value,
+            priority: projectPriority.value,
             description: projectInputDescription.value,
             tasks: [],
             id: Math.random()

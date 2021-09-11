@@ -10,3 +10,15 @@ body {
     margin: 1em;;
     border: 1px solid black;
 }
+
+.taskDone {
+    text-decoration: line-through;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}

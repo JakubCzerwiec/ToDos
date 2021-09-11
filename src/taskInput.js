@@ -10,7 +10,7 @@ let tasktInput = () => {
             let taskInput = document.createElement('div');
             taskInput.innerHTML = `      
                 <form id="tasksForm" class="form_task">
-                    <label for="taskInputTitle">Title for new Project</label>
+                    <label for="taskInputTitle">Title for new Task</label>
                     <input id="taskInputTitle" type="text" placeholder="Insert title">
             
                     <label for="taskInputDate">Date</label>

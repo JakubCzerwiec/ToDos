@@ -17,6 +17,14 @@ let editProject = () => {
                 <label for="projectEditDate">Date</label>
                 <input id="projectEditDate" type="text" placeholder="Insert date" value="${projects[index].date}">
 
+                <label for="projectEditPriority">Priority</label>
+                <select name="projectEditPriority" id="projectEditPriority">
+                    <option disabled selected value>Choose priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
                 <label for="projectEditDescription">Title for new Project</label>
                 <input id="projectEditDescription" type="text-area" placeholder="Type some description" value="${projects[index].description}">
 
@@ -35,6 +43,7 @@ let editProject = () => {
                 projects[index] = {
                     title: projectEditTitle.value,
                     date: projectEditDate.value,
+                    priority: projectEditPriority.value,
                     description: projectEditDescription.value,
                     tasks: projects[index].tasks,
                     id: projects[index].id
