@@ -22,3 +22,19 @@ body {
 .red {
     background-color: red;
 }
+
+.taskDeleteBtn {
+   z-index: -3;
+}
+
+.greeeeen {
+    background-color: greenyellow;
+}
+
+.yellllow {
+    background-color: khaki;
+}
+
+.reed {
+    background-color: lightcoral;
+}

@@ -2,12 +2,14 @@ import {projects} from './projectInput';
 import {tasktInput} from './taskInput';
 import {editProject} from './editProject';
 import {taskDoneListener} from './listeners';
+import {priorityColorChange} from './listeners';
 
 
 
 let projectsRender = () => {
    
     const projectsDiv = document.querySelector('.projectsDiv');
+    
     
     // Listener to delete project
     let deleteProjectListener = () => {
@@ -56,11 +58,13 @@ let projectsRender = () => {
     // Render everything on screen
     let render = () => {
         projectsDiv.innerHTML = '';
-
+        
                 projects.forEach((project) => {
+                    
 
                     let singleProject = document.createElement('div');
                     singleProject.className = 'singleProject';
+
                     
                         let projectDeleteBtn = document.createElement('div');
                         projectDeleteBtn.innerText = 'X';
@@ -113,27 +117,33 @@ let projectsRender = () => {
                             taskDiv.append(taskDoneBtn, taskDeleteBtn);
 
                             projectTask.append(taskDiv);
+
+
                         })
 
 
     
                     singleProject.append(projectDeleteBtn, projectEditBtn, projectTitle, projectDate, projectPriority, projectDescription, projectTask, addTaskBtn);
                     projectsDiv.append(singleProject);
+                    priorityColorChange()
 
-                    
+
                 })
-                
+
             deleteProjectListener();
             deleteTaskListener();
             editProject();
             taskDoneListener();
-
             
 
     }
-    render();
-    tasktInput();
+
     
+    render();
+    
+    tasktInput();
+
+
 }
 
 export {projectsRender}

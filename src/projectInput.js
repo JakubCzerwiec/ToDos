@@ -1,10 +1,12 @@
-import {projectsRender} from './projectOnScreen'
+import {projectsRender} from './projectOnScreen';
+import {priorityColorChange} from './listeners';
 
 // Examples
 const projects =[
     {
         title: 'One',
-        date: '12.09.2021',
+        date: '2021-09-23',
+        priority: 'low',
         description: 'alle',
         tasks: [
             {
@@ -21,6 +23,27 @@ const projects =[
             }
         ],
         id: 0.234
+    },
+    {
+        title: 'Two',
+        date: '2021-05-05',
+        priority: 'medium',
+        description: 'alle',
+        tasks: [
+            {
+                title: 'one',
+                id: 0.095
+                }, 
+            {
+                title: 'two',
+                id: 0.065
+            }, 
+            {
+                title: 'three',
+                id: 0.075
+            }
+        ],
+        id: 0.2345
     }
 ];
 
@@ -48,6 +71,7 @@ let projectInput = () => {
         console.log(projects);
 
         projectForm.classList.toggle('hidden');
+        priorityColorChange()
 
         projectsRender();
     })

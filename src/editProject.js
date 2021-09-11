@@ -1,9 +1,10 @@
 import { projects } from "./projectInput";
 import {projectsRender} from './projectOnScreen';
+import {priorityColorChange} from './listeners';
 
 let editProject = () => {
     let projectEditBtnS = document.querySelectorAll('.projectEditBtn');
-    const projectsDiv = document.querySelector('.projectsDiv');
+  //  const projectsDiv = document.querySelector('.projectsDiv');
 
     projectEditBtnS.forEach((button, index) => {
         button.addEventListener('click', () => {
@@ -15,7 +16,7 @@ let editProject = () => {
                 <input id="projectEditTitle" type="text" placeholder="Insert title" value="${projects[index].title}">
 
                 <label for="projectEditDate">Date</label>
-                <input id="projectEditDate" type="text" placeholder="Insert date" value="${projects[index].date}">
+                <input id="projectEditDate" type="date" placeholder="Insert date" value="${projects[index].date}">
 
                 <label for="projectEditPriority">Priority</label>
                 <select name="projectEditPriority" id="projectEditPriority">
@@ -37,9 +38,6 @@ let editProject = () => {
             editProjectForm.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-
-
-
                 projects[index] = {
                     title: projectEditTitle.value,
                     date: projectEditDate.value,
@@ -51,6 +49,7 @@ let editProject = () => {
 
                 projectForm.reset();
                 console.log(projects);
+        //        priorityColorChange();
                 projectsRender();
         
                 content.removeChild(editProjectForm);
