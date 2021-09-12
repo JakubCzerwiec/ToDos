@@ -3,11 +3,13 @@ import {tasktInput} from './taskInput';
 import {editProject} from './editProject';
 import {taskDoneListener} from './listeners';
 import {priorityColorChange} from './listeners';
+import {setData} from './storageFunctions';
+ import {restore} from './storageFunctions';
 
 
 
 let projectsRender = () => {
-   
+   restore()
     const projectsDiv = document.querySelector('.projectsDiv');
     
     
@@ -27,6 +29,7 @@ let projectsRender = () => {
                     })
               
                 console.log(projects);
+                setData();
                 render();
                 })
         });
@@ -48,6 +51,7 @@ let projectsRender = () => {
                     })
                 })
                 console.log(projects);
+                setData();
                 render(); 
             })
         })
@@ -58,7 +62,9 @@ let projectsRender = () => {
     // Render everything on screen
     let render = () => {
         projectsDiv.innerHTML = '';
-        
+       // restore()
+        if (projects == []) return
+        else {
                 projects.forEach((project) => {
                     
 
@@ -110,11 +116,12 @@ let projectsRender = () => {
                             taskDeleteBtn.className = 'taskDeleteBtn';
                             taskDeleteBtn.id = task.id;
 
-                            let taskDoneBtn = document.createElement('div');
-                            taskDoneBtn.innerHTML = `<input type='checkbox'>`
+                            let taskDoneBtn = document.createElement('input');
+                            taskDoneBtn.type = 'checkbox';
                             taskDoneBtn.className = 'taskDoneBtn';
                             taskDoneBtn.id = task.id;
                             taskDiv.append(taskDoneBtn, taskDeleteBtn);
+                            
 
                             projectTask.append(taskDiv);
 
@@ -128,7 +135,7 @@ let projectsRender = () => {
                     priorityColorChange()
 
 
-                })
+                })}
 
             deleteProjectListener();
             deleteTaskListener();

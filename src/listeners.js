@@ -1,17 +1,37 @@
 import { projects } from './projectInput';
 import {projectsRender} from './projectOnScreen';
+import {setData} from './storageFunctions';
 
 
 let taskDoneListener = () => {
     
     let taskDoneBtn = document.querySelectorAll('.taskDoneBtn');
     let taskDeleteBtns = document.querySelectorAll('.taskDeleteBtn');
-    taskDoneBtn.forEach((element, index) => {
+  
+   /* taskDoneBtn.forEach(element => {
+        element.addEventListener('change', () => {
+            projects.forEach(pro => {
+                
+            })
+        })
+    }) */
+  
+  
+  
+  
+  
+  
+  
+  /*  taskDoneBtn.forEach((element, index) => {
         element.addEventListener('change', () => {
             element.parentElement.classList.toggle('green');
-            taskDeleteBtns[index].classList.toggle('red');  
+            taskDeleteBtns[index].classList.toggle('red'); 
+// Something must change in the object value to be able to save in local storage
+
         })  
-    })
+        setData();  
+
+    }) */
 }
 
 
@@ -25,6 +45,7 @@ let priorityColorChange = () => {
             element.classList.add('yellllow')
         else if (projects[index].priority === 'high')
             element.classList.add('reed'); 
+            setData();
     })
 }
 

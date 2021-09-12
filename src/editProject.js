@@ -1,6 +1,7 @@
 import { projects } from "./projectInput";
 import {projectsRender} from './projectOnScreen';
 import {priorityColorChange} from './listeners';
+import {setData} from './storageFunctions';
 
 let editProject = () => {
     let projectEditBtnS = document.querySelectorAll('.projectEditBtn');
@@ -49,7 +50,7 @@ let editProject = () => {
 
                 projectForm.reset();
                 console.log(projects);
-        //        priorityColorChange();
+                setData();
                 projectsRender();
         
                 content.removeChild(editProjectForm);

@@ -2,14 +2,17 @@ import './style.css';
 
 import {projectInput} from './projectInput';
 import {projects} from './projectInput';
-import {projectsRender} from './projectOnScreen'
+import {projectsRender} from './projectOnScreen';
+import { restore } from './storageFunctions';
 
 import {tasktInput} from './taskInput';
 
 
 window['projects'] = projects;
 
-projectsRender()
+ //restore ();
+
+ projectsRender();
 
 projectInput ();
 

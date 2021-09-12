@@ -1,51 +1,58 @@
 import {projectsRender} from './projectOnScreen';
 import {priorityColorChange} from './listeners';
+import {setData} from './storageFunctions';
 
 // Examples
-const projects =[
-    {
-        title: 'One',
-        date: '2021-09-23',
-        priority: 'low',
-        description: 'alle',
-        tasks: [
-            {
-                title: 'one',
-                id: 0.09
+let projects = []; /*= [
+        {
+            title: 'One',
+            date: '2021-09-23',
+            priority: 'low',
+            description: 'alle',
+            tasks: [
+                {
+                    title: 'one',
+                    id: 0.09,
+                    status: 'no'
+                    }, 
+                {
+                    title: 'two',
+                    id: 0.06,
+                    status: 'no'
                 }, 
-            {
-                title: 'two',
-                id: 0.06
-            }, 
-            {
-                title: 'three',
-                id: 0.07
-            }
-        ],
-        id: 0.234
-    },
-    {
-        title: 'Two',
-        date: '2021-05-05',
-        priority: 'medium',
-        description: 'alle',
-        tasks: [
-            {
-                title: 'one',
-                id: 0.095
+                {
+                    title: 'three',
+                    id: 0.07,
+                    status: 'no'
+                }
+            ],
+            id: 0.234
+        },
+        {
+            title: 'Two',
+            date: '2021-05-05',
+            priority: 'medium',
+            description: 'alle',
+            tasks: [
+                {
+                    title: 'one',
+                    id: 0.095,
+                    status: 'no'
+                    }, 
+                {
+                    title: 'two',
+                    id: 0.065,
+                    status: 'no'
                 }, 
-            {
-                title: 'two',
-                id: 0.065
-            }, 
-            {
-                title: 'three',
-                id: 0.075
-            }
-        ],
-        id: 0.2345
-    }
-];
+                {
+                    title: 'three',
+                    id: 0.075,
+                    status: 'no'
+                }
+            ],
+            id: 0.2345
+        }
+    ]; */
 
 // Injecting data into projects array
 let projectInput = () => {
@@ -73,6 +80,7 @@ let projectInput = () => {
         projectForm.classList.toggle('hidden');
         priorityColorChange()
 
+        setData();
         projectsRender();
     })
 

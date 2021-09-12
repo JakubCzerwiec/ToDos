@@ -1,4 +1,5 @@
-import {projectsRender} from './projectOnScreen'
+import {projectsRender} from './projectOnScreen';
+import {setData} from './storageFunctions';
 
 let tasktInput = () => {
 
@@ -14,7 +15,7 @@ let tasktInput = () => {
                     <input id="taskInputTitle" type="text" placeholder="Insert title">
             
                     <label for="taskInputDate">Date</label>
-                    <input id="taskInputDate" type="text" placeholder="Insert date">
+                    <input id="taskInputDate" type="date">
                     <button class="taskSubmitBtn">Create</button>
         
                 </form>`;
@@ -36,7 +37,7 @@ let tasktInput = () => {
                 projects[index].tasks.push(task);
                 projectsDiv.removeChild(taskInput);
                 console.log(projects)
-                
+                setData();
                 projectsRender();
             }) 
 
