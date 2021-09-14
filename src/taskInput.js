@@ -30,6 +30,7 @@ let tasktInput = () => {
                 let task = {
                     title: taskTitleInput.value,
                     date: taskInputDate.value,
+                    status: false,
         
                     id: Math.random()
                 }

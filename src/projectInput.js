@@ -3,7 +3,7 @@ import {priorityColorChange} from './listeners';
 import {setData} from './storageFunctions';
 
 // Examples
-let projects = []; /*= [
+let projects = [
         {
             title: 'One',
             date: '2021-09-23',
@@ -13,17 +13,17 @@ let projects = []; /*= [
                 {
                     title: 'one',
                     id: 0.09,
-                    status: 'no'
+                    status: false,
                     }, 
                 {
                     title: 'two',
                     id: 0.06,
-                    status: 'no'
+                    status: false,
                 }, 
                 {
                     title: 'three',
                     id: 0.07,
-                    status: 'no'
+                    status: true,
                 }
             ],
             id: 0.234
@@ -37,22 +37,22 @@ let projects = []; /*= [
                 {
                     title: 'one',
                     id: 0.095,
-                    status: 'no'
+                    status: false,
                     }, 
                 {
                     title: 'two',
                     id: 0.065,
-                    status: 'no'
+                    status: false,
                 }, 
                 {
                     title: 'three',
                     id: 0.075,
-                    status: 'no'
+                    status: false,
                 }
             ],
             id: 0.2345
         }
-    ]; */
+    ]; 
 
 // Injecting data into projects array
 let projectInput = () => {
@@ -64,14 +64,23 @@ let projectInput = () => {
     const projectInputDescription = document.getElementById('projectInputDescription');
 
     projectForm.addEventListener('submit', (e) => {
-        e.preventDefault()
+        (e).preventDefault()
+        let idN = Math.random()
         let project = {
             title: projectTitleInput.value,
             date: projectInputDate.value,
             priority: projectPriority.value,
             description: projectInputDescription.value,
             tasks: [],
-            id: Math.random()
+            id: idN,
+         /*   deleteProject: () => {
+                console.log(projects)
+                let indexNum = projects.findIndex(project => {
+                    return project.id == idN
+                })
+                projects.splice(indexNum, 1);
+               // render(); 
+            } */
         }
         projects.push(project);
         projectForm.reset();

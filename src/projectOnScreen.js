@@ -120,11 +120,12 @@ let projectsRender = () => {
                             taskDoneBtn.type = 'checkbox';
                             taskDoneBtn.className = 'taskDoneBtn';
                             taskDoneBtn.id = task.id;
+                            
                             taskDiv.append(taskDoneBtn, taskDeleteBtn);
                             
 
                             projectTask.append(taskDiv);
-
+                            if (task.status === true) taskDoneBtn.parentElement.classList.add('green');
 
                         })
 

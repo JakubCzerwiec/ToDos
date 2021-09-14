@@ -8,20 +8,34 @@ let taskDoneListener = () => {
     let taskDoneBtn = document.querySelectorAll('.taskDoneBtn');
     let taskDeleteBtns = document.querySelectorAll('.taskDeleteBtn');
   
-   /* taskDoneBtn.forEach(element => {
+    taskDoneBtn.forEach((element, index) => {
         element.addEventListener('change', () => {
-            projects.forEach(pro => {
+            taskDoneBtn[index].parentElement.classList.toggle('green');
+            taskDeleteBtns[index].classList.toggle('show');
+
+            let btnId = element.id;
+
+            projects.forEach(project => {
+                let thisTask = project.tasks.filter((task) => {
+                     return task.id == btnId;
+                 })
+
+    // Do splice wstawić indexOf tego tasku i zastąpić go nowym jako trzeci argument             
+                //  project.tasks.splice(0, project.tasks.length);
+                //  deleted.forEach(el => {
+                //      project.tasks.push(el)
+                console.log(thisTask)
+                thisTask[0].status = true;
+                console.log(thisTask)
+                 
+             })
+
                 
-            })
+            
         })
-    }) */
-  
-  
-  
-  
-  
-  
-  
+    }) 
+
+
   /*  taskDoneBtn.forEach((element, index) => {
         element.addEventListener('change', () => {
             element.parentElement.classList.toggle('green');

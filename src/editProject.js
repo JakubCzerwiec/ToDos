@@ -45,7 +45,15 @@ let editProject = () => {
                     priority: projectEditPriority.value,
                     description: projectEditDescription.value,
                     tasks: projects[index].tasks,
-                    id: projects[index].id
+                    id: projects[index].id,
+                 /*   deleteProject: () => {
+                        let indexNum = projects.findIndex(project => {
+                            return project.id == idN
+                        })
+                        projects.splice(indexNum, 1); 
+                        render(); 
+                    } */
+                    
                 }
 
                 projectForm.reset();

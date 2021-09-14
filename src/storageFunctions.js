@@ -13,13 +13,12 @@ let restore = () => {
     if (localStorage.length == 0) return
 
     else 
-    
         {
-        let data = JSON.parse(window.localStorage.getItem(`projects`));
-        projects.splice(0, projects.length);
-        data.forEach(el => {
-        projects.push(el)
-        })
+            let data = JSON.parse(window.localStorage.getItem(`projects`));
+            projects.splice(0, projects.length);
+            data.forEach(el => {
+                projects.push(el)
+            })
         }
 
 }

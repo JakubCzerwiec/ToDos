@@ -24,7 +24,11 @@ body {
 }
 
 .taskDeleteBtn {
-   z-index: -3;
+   transform: translateX(200%);
+}
+
+.show {
+    transform: translateX(0%);
 }
 
 .greeeeen {
