@@ -4,7 +4,8 @@ import {editProject} from './editProject';
 import {taskDoneListener} from './listeners';
 import {priorityColorChange} from './listeners';
 import {setData} from './storageFunctions';
- import {restore} from './storageFunctions';
+import {restore} from './storageFunctions';
+// import {sortByDate} from './sort';
 
 
 
@@ -56,6 +57,30 @@ let projectsRender = () => {
             })
         })
 
+    } 
+
+
+    let sortByDate = () => {
+        const sortDate = document.querySelector('.sortDate');
+    
+        sortDate.addEventListener('click', () => {
+            let sorted = projects.sort((a, b) => 
+            (a.id < b.id) ? 1 : -1)
+
+            console.log(sorted)
+    
+             projects.splice(0, projects.length, ...sorted);
+            //  sorted.forEach(el => {
+            //      projects.push(el)
+            //  })
+
+          //  console.log(ad)
+    
+
+            setData()
+          //  render()
+            
+        })
     } 
 
     
@@ -142,6 +167,7 @@ let projectsRender = () => {
             deleteTaskListener();
             editProject();
             taskDoneListener();
+            sortByDate();
             
 
     }

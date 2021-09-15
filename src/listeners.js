@@ -16,19 +16,24 @@ let taskDoneListener = () => {
             let btnId = element.id;
 
             projects.forEach(project => {
-                let thisTask = project.tasks.filter((task) => {
-                     return task.id == btnId;
-                 })
+                let taskInd = project.tasks.findIndex(0.06);
+                console.log(taskInd)
+            })
 
-    // Do splice wstawić indexOf tego tasku i zastąpić go nowym jako trzeci argument             
-                //  project.tasks.splice(0, project.tasks.length);
-                //  deleted.forEach(el => {
-                //      project.tasks.push(el)
-                console.log(thisTask)
-                thisTask[0].status = true;
-                console.log(thisTask)
-                 
-             })
+    //         projects.forEach(project => {
+    //             let thisTask = project.tasks.filter((task) => {
+    //                  return task.id == btnId;
+    //              })
+
+
+    // // Do splice wstawić indexOf tego tasku i zastąpić go nowym jako trzeci argument             
+    //             //  project.tasks.splice(0, project.tasks.length);
+    //             //  deleted.forEach(el => {
+    //             //      project.tasks.push(el)
+    //             thisTask[0].status = true;
+    //             console.log(thisTask[0])
+    //          })
+            
 
                 
             
