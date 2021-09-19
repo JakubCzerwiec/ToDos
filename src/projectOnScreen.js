@@ -64,23 +64,29 @@ let projectsRender = () => {
         const sortDate = document.querySelector('.sortDate');
     
         sortDate.addEventListener('click', () => {
-            let sorted = projects.sort((a, b) => 
-            (a.id < b.id) ? 1 : -1)
 
-            console.log(sorted)
-    
-             projects.splice(0, projects.length, ...sorted);
-            //  sorted.forEach(el => {
-            //      projects.push(el)
-            //  })
+            if (sortDate.classList.contains('opposite')) {
+                let sorted = projects.sort((a, b) => 
+                (a.date < b.date) ? 1 : -1)
+                sortDate.classList.toggle('opposite');
+                console.log(sorted)
+        
+                projects.splice(0, projects.length, ...sorted);
+            }
 
-          //  console.log(ad)
-    
-
+            else {
+                let sorted = projects.sort((a, b) => 
+                (a.date > b.date) ? 1 : -1)
+                sortDate.classList.toggle('opposite');
+                console.log(sorted)
+        
+                projects.splice(0, projects.length, ...sorted);
+            }
             setData()
           //  render()
             
         })
+       // render()
     } 
 
     
